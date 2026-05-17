@@ -26,7 +26,7 @@ class Solution {
         int sum = 0;
 
         for (int num : nums) {
-            sum += (num + divisor - 1) / divisor;
+            sum += (int)Math.ceil((double) num / divisor);
         } return sum;
     }
 }
