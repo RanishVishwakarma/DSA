@@ -15,25 +15,17 @@ class Solution {
             return null;
         }
 
-        ListNode middle = findMiddle(head);
-
-        ListNode temp = head;
-
-        while(temp.next != middle) {
-            temp = temp.next;
-        }
-        temp.next = middle.next;
-        return head;
-    }
-
-    private ListNode findMiddle(ListNode head) {
-
         ListNode slow = head;
         ListNode fast = head;
-     
+        ListNode prev = null;
+
         while (fast != null && fast.next != null) {
+            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
-        } return slow;
+        }
+
+        prev.next = slow.next;
+        return head;
     }
 }
